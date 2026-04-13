@@ -1,8 +1,11 @@
-name: ci
+name: ci-native
 
 on:
   push:
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   native:
@@ -13,21 +16,20 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: jiro4989/setup-nim-action@v2
         with:
-          components: rustfmt, clippy
-      - name: Format
-        run: cargo fmt --check
-      - name: Lint
-        run: cargo clippy -- -D warnings
+          nim-version: 2.2.8
+      - name: Format check
+        shell: bash
+        run: |
+          nimpretty src/stakeholder.nim src/stakeholder_runtime.nim tests/test_stakeholder.nim
+          git diff --exit-code
+      - name: Semantic checks
+        shell: bash
+        run: |
+          nim check src/stakeholder.nim
+          nim check --path:src tests/test_stakeholder.nim
+      - name: Build
+        run: nimble build -y
       - name: Test
-        run: cargo test
-
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build image
-        run: docker build -t rust-stakeholder .
-      - name: Smoke test
-        run: docker run --rm rust-stakeholder --list-values
+        run: nimble test -y

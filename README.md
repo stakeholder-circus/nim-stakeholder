@@ -1,45 +1,42 @@
 > [!IMPORTANT]
 > This repository is part of a Codex-assisted rewrite experiment. All changes are manually reviewed, a human remains in the loop, and missing behavior is tracked explicitly rather than hidden. The project exists for fun, research, language learning, AI agent workflow/planning, interop experiments, and code review testing.
-# rust-stakeholder
+# nim-stakeholder
 
-Satirical CLI output generator, now serving as the 2026+ source baseline for the multi-language `stakeholder` rewrite program.
+Deterministic Nim rewrite tranche under `stakeholder-circus`.
 
 ## Status
-- Rust is the source-of-truth implementation.
-- The runtime is now scheduler-driven and deterministic under seed.
-- The baseline includes modern generator families for agents, AI operations, blockchain, healthcare, EV charging, protocol ecosystems, multilingual security flavor packs, and quantum-themed infrastructure work.
-- Experimental live-provider concepts exist in the design, but deterministic parity behavior remains the default path.
+- Active local full rewrite tranche.
+- Full classic-six plus modern-core family depth is implemented.
+- Deterministic normalized JSON and the shared CLI contract are present.
+- Docker is the portable release gate; publication is still blocked until at least 10 validated full rewrites exist.
+- Imported Rust history is preserved for attribution and auditability.
 
-## Command contract
-- `cargo fmt`
-- `cargo clippy -- -D warnings`
-- `cargo build`
-- `cargo test`
-- `docker build -t rust-stakeholder .`
-- `docker run --rm rust-stakeholder --list-values`
+## Role
+- Pragmatic compiled scripting lane with deterministic CLI-oriented delivery.
+- Purpose: fast native binaries, straightforward static compilation, and explicit metaprogramming restraint.
+- Program category: ecosystem reach, interop
 
-## Example usage
-```bash
-cargo run -- --dev-type security --jargon high --complexity extreme --alerts --seed 42
-cargo run -- --dev-type blockchain --framework "rollup-mcp-gateway" --output-format json --seed 7
-cargo run -- --project "hospital-ocpp-quantum-control" --jargon extreme --team --trace --seed 11
-```
+## Supported family depth
+- Dedicated classic-six: `code_analyzer`, `data_processing`, `jargon`, `metrics`, `network_activity`, `system_monitoring`
+- Dedicated modern-core: `agent_workflows`, `platform_engineering`, `observability_ai_runtime`, `delivery_preview_ops`, `supply_chain_security`
+- Grouped fallback: `ai_governance`, `security_blockchain`, `health_protocol`, `overlay_quantum`
 
-## What changed in the 2026+ baseline
-- classic families were modernized instead of left as legacy parody strings
-- activity planning now uses typed family selection instead of a fixed loop
-- keyword routing brings in healthcare, charging, protocol, and quantum families where relevant
-- security runs can layer multilingual language packs and persona overlays
-- JSON output is deterministic and snapshot-friendly when a seed is supplied
+## CLI contract
+- `--list-values`
+- `--focus-family <family>`
+- `--output-format <text|json>`
+- `--seed <value>`
+- `--experimental-provider <name>` -> explicit fail-fast
 
-## Docs
-- [Tooling](docs/tooling.md)
-- [Docker](docs/docker.md)
-- [Edge cases](docs/edge-cases.md)
-- [Language specialties](docs/language-specialties.md)
-- [Example outputs](docs/example-outputs.md)
-- [Experimental](docs/experimental.md)
-- [Traceability](docs/traceability/README.md)
+## Validation surface
+- Native: `nimpretty`, `nim check`, `nimble build -y`, `nimble test -y`
+- Docker: build plus runtime smokes for `--list-values`, representative classic-six and modern-core JSON, deterministic same-seed output, and explicit experimental-provider fail-fast
 
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md). Use Conventional Commits and keep Rust behavior traceable because downstream repos depend on this baseline.
+## Documentation
+- [AI disclosure](AI_DISCLOSURE.md)
+- [Parity](PARITY.md)
+- [Explicit gaps](GAPS.md)
+- [Remotes](docs/remotes.md)
+- [Provenance](docs/provenance.md)
+- [Toolchain](docs/toolchain.md)
+- [First-push traceability](docs/traceability/first-push-families.md)

@@ -1,0 +1,33 @@
+name: docker-smoke
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docker-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t nim-stakeholder .
+      - name: Runtime smokes
+        shell: bash
+        run: |
+          docker run --rm nim-stakeholder --list-values --output-format json
+          docker run --rm nim-stakeholder --focus-family code_analyzer --output-format json --seed docker-code
+          docker run --rm nim-stakeholder --focus-family data_processing --output-format json --seed docker-data
+          docker run --rm nim-stakeholder --focus-family agent_workflows --output-format json --seed docker-agent
+          docker run --rm nim-stakeholder --focus-family delivery_preview_ops --output-format json --seed docker-delivery
+          first=$(docker run --rm nim-stakeholder --focus-family platform_engineering --output-format json --seed same-seed)
+          second=$(docker run --rm nim-stakeholder --focus-family platform_engineering --output-format json --seed same-seed)
+          test "$first" = "$second"
+          set +e
+          output=$(docker run --rm nim-stakeholder --experimental-provider openai-compatible 2>&1)
+          status=$?
+          set -e
+          test $status -ne 0
+          printf '%s' "$output" | grep -q 'experimental-provider is not implemented yet in nim-stakeholder'

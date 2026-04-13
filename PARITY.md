@@ -2,11 +2,11 @@
 
 ## Role
 
-Canonical Rust source of truth and the only true public fork of giacomo-b/rust-stakeholder.
+Pragmatic compiled scripting rewrite tranche.
 
 ## Parity class
 
-- canonical-source
+- native-and-docker-validated-wider-matrix
 
 ## Method and Review Model
 
@@ -14,10 +14,13 @@ Canonical Rust source of truth and the only true public fork of giacomo-b/rust-s
 - Manually reviewed
 - Human in the loop
 - Derived from giacomo-b/rust-stakeholder where applicable
-- Missing behavior must fail fast and be recorded explicitly in GAPS.md
+- Missing behavior must fail fast and be recorded explicitly in `GAPS.md`
 
-## Attribution model
+## Phase target
 
-- Original upstream Rust history is preserved for language repos created from the Rust baseline.
-- New language-specific rewrite commits sit on top of the imported upstream history.
-- MIT licensing remains in place for fork-derived work.
+- Full local `classic-six + modern-core + validation` tranche complete
+- Publication still blocked by the 10-rewrite guardrail
+
+## Traceability rule
+
+- Every dedicated family in this tranche points back to Rust, Java, and `stakeholder-core` in `docs/traceability/first-push-families.md`.
