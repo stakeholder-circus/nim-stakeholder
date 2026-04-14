@@ -1,10 +1,10 @@
 # nim-stakeholder Status
 
-Last updated: 2026-04-09 22:05 CEST
+Last updated: 2026-04-13 CEST
 
-- Role: `active-wider-matrix`
+- Role: `validated-wider-matrix`
 - Parity class: `native-and-docker-validated-wider-matrix`
-- State: `local-full-rewrite-tranche`
+- State: `publication-held`
 - Phase completeness: `100%`
 - Program completeness: `58%`
 - Branch: `main`

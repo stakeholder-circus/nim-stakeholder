@@ -2,7 +2,7 @@
 
 ## Role
 
-Pragmatic compiled scripting rewrite tranche.
+Pragmatic compiled scripting rewrite tranche validated locally and held for publication.
 
 ## Parity class
 

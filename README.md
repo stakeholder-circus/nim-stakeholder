@@ -5,7 +5,7 @@
 Deterministic Nim rewrite tranche under `stakeholder-circus`.
 
 ## Status
-- Active local full rewrite tranche.
+- Validated wider-matrix repo held for publication.
 - Full classic-six plus modern-core family depth is implemented.
 - Deterministic normalized JSON and the shared CLI contract are present.
 - Docker is the portable release gate; publication is still blocked until at least 10 validated full rewrites exist.
